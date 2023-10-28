@@ -5,15 +5,23 @@ import { useRouter } from "next/navigation";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiSolidMicrophone } from "react-icons/bi";
 
-export default function HomeSearch() {
+export default function HomeSearch () {
 
     const [input, setInput] = useState("");
     const router = useRouter();
+    const [randomLoading, setRandomLoading] = useState(false)
     function handleSubmit (e) {
         e.preventDefault();
         if(!input.trim()) return;
         router.push(`/search/web?searchTerm=${input}`)
 
+    }
+
+    async function randomSearch () {
+        setRandomLoading(true);
+        const response = await fetch(`https://random-word-api.herokuapp.com/word`).then((res) => res.json()).then((data) => data[0]);
+        if(!response) return;
+        router.push(`/search/web?searchTerm=${response}`);
     }
 
   return (
@@ -24,11 +32,11 @@ export default function HomeSearch() {
             <BiSolidMicrophone className="text-lg" />
         </form>
         <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 justify-center sm:flex-row mt-8">
-            <button className="btn">
+            <button onClick={handleSubmit} className="btn">
                 Google Search
             </button>
-            <button className="btn">
-                I'm Feeling Lucky!
+            <button disabled={randomLoading} onClick={randomSearch} className="btn flex items-center justify-center">
+                {randomLoading ? <img src="spinner2.svg" alt="loading..." className="h-6 text-center" /> : "I'm Feeling Lucky!" }
             </button>
         </div>
     </>
