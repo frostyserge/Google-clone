@@ -2,12 +2,12 @@ import CountryIP from "./CountryIP";
 
 export default function Footer() {
   return (
-    <footer>
-        <div>
+    <footer className="absolute bottom-0 text-sm text-gray-500 bg-[f2f2f2] w-">
+        <div className="border-b px-8 py-3 ">
             <CountryIP />
         </div>
-        <div>
-            <ul>
+        <div className="flex flex-col sm:flex-row justify-between items-center px-8 py-3 space-y-7 sm:space-y-0">
+            <ul className="flex items-cengter space-x-6">
                 <li className="link">
                     About
                 </li>
@@ -21,7 +21,7 @@ export default function Footer() {
                     How Search Works
                 </li>
             </ul>
-            <ul>
+            <ul className="flex items-cengter space-x-6">
                 <li className="link">
                     Privacy
                 </li>
