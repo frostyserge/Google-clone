@@ -2,7 +2,7 @@ import CountryIP from "./CountryIP";
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 text-sm text-gray-500 bg-[f2f2f2] w-">
+    <footer className="absolute bottom-0 text-sm text-gray-500 bg-[#f2f2f2] w-full">
         <div className="border-b px-8 py-3 ">
             <CountryIP />
         </div>

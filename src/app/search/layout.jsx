@@ -7,7 +7,7 @@ export default function SearchLayout({ children }) {
         <SearchHeader />
 
         {children}
-
+        {/* Footer */}
       </div>
   )
 }
