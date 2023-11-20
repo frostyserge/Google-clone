@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Parser from "html-react-parser";
 
-
 export default function WebSearchResults({ results }) {
   return (
     <div className="w-full mx-auto px-3 pb-24 sm:pl-[5%] md:pl-[14%] lg:pl-52">
