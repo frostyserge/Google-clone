@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import SearchBox from "./SearchBox";
-import { RiSettings3Line } from "react-icons/ri";
-import { TbGridDots } from "react-icons/tb";
+import SearchBox from './SearchBox';
+import { RiSettings3Line } from 'react-icons/ri';
+import { TbGridDots } from 'react-icons/tb';
 import SearchHeaderOpt from './SearchHeaderOpt';
 
 export default function SearchHeader() {
@@ -23,7 +23,9 @@ export default function SearchHeader() {
                     <RiSettings3Line className="header-icon" />
                     <TbGridDots className="header-icon" />
                 </div>
-                <button className="bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md transition-all ml-2">Sign In</button>
+                <button className="bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md transition-all ml-2">
+                    Sign In
+                </button>
             </div>
             <SearchHeaderOpt />
         </header>

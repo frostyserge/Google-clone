@@ -3,9 +3,11 @@ import Link from "next/link";
 
 export default async function ImgSearchPage({searchParams}) {
 
+  const startIndex = searchParams.start || "1";
+
   const SEARCH_API_KEY = process.env.SEARCH_API_KEY;
   const CONTEXT_KEY = process.env.CONTEXT_KEY;
-  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${SEARCH_API_KEY}&cx=${CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image`);
+  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${SEARCH_API_KEY}&cx=${CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`);
 
   if (!response.ok) { 
     throw new Error("Oops...Something went wrong");

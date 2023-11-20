@@ -3,9 +3,11 @@ import Link from "next/link";
 
 export default async function WebSearchPage({searchParams}) {
 
+  const startIndex = searchParams.start || "1";
+
   const SEARCH_API_KEY = process.env.SEARCH_API_KEY;
   const CONTEXT_KEY = process.env.CONTEXT_KEY;
-  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${SEARCH_API_KEY}&cx=${CONTEXT_KEY}&q=${searchParams.searchTerm}`);
+  const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${SEARCH_API_KEY}&cx=${CONTEXT_KEY}&q=${searchParams.searchTerm}&start=${startIndex}`);
 
   if (!response.ok) { 
     throw new Error("Oops...Something went wrong");
